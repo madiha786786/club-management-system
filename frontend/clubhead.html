@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Head Dashboard - KMIT Clubs Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide-icons@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="flex h-screen">
+    <aside class="w-64 bg-white shadow-md">
+      <div class="p-6 font-bold text-blue-700 text-lg">KMT Clubs Hub</div>
+      <nav class="p-4 space-y-2">
+        <a href="#" class="block py-2 px-3 rounded bg-blue-100 text-blue-700">Dashboard</a>
+        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-100">Members</a>
+        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-100">Events</a>
+      </nav>
+    </aside>
+
+    <main class="flex-1 p-6 overflow-auto">
+      <header class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-bold">Club Head - <span id="clubName">Loading...</span></h1>
+        <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+      </header>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <h2 class="text-3xl font-bold text-blue-700" id="totalMembers">0</h2>
+          <p class="text-gray-600">Total Members</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <h2 class="text-3xl font-bold text-green-600" id="pendingRequestsCount">0</h2>
+          <p class="text-gray-600">Pending Requests</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <h2 class="text-3xl font-bold text-yellow-600" id="eventsCount">0</h2>
+          <p class="text-gray-600">Events</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4 mb-8">
+        <button onclick="openCreateEventModal()" class="bg-blue-600 text-white px-4 py-2 rounded">
+          Create Event
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4">📋 Pending Join Requests</h3>
+          <div id="pendingRequestsList" class="space-y-3">
+            <div class="text-center py-4">
+              <p class="text-gray-500">Loading requests...</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow">
+          <h3 class="text-xl font-bold mb-4">👥 Club Members</h3>
+          <div id="membersList" class="space-y-3">
+            <div class="text-center py-4">
+              <p class="text-gray-500">Loading members...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow mt-6">
+        <h3 class="text-xl font-bold mb-4">📅 Club Events</h3>
+        <div id="eventsList">
+          <div class="text-center py-4">
+            <p class="text-gray-500">No events yet</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Create Event Modal -->
+  <div id="createEventModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+    <div class="bg-white p-6 rounded-lg w-96">
+      <h3 class="text-lg font-bold mb-4">Create New Event</h3>
+      <form id="eventForm" onsubmit="createEvent(event)">
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Event Title</label>
+          <input type="text" name="title" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Date</label>
+          <input type="datetime-local" name="date" required class="w-full p-2 border rounded">
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 mb-2">Description</label>
+          <textarea name="description" required class="w-full p-2 border rounded"></textarea>
+        </div>
+        <div class="flex justify-end gap-3">
+          <button type="button" onclick="closeModal()" class="bg-gray-500 text-white px-4 py-2 rounded">Cancel</button>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Create</button>
+        </div>
+      </form>
+    </div>
+  </div>
+<script src="api.js"></script>
+  <script src="clubhead-dashboard.js"></script>
+</body>
+</html>

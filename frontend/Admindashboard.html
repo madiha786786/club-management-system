@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KMIT Clubs Hub - Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'sans': ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: '#4A90E2',
+            accent: '#FF6B6B',
+            dark: '#212529',
+            light: '#F8F9FA',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans bg-light">
+
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-md">
+      <div class="p-6">
+        <h1 class="text-xl font-bold text-primary">KMIT Clubs Hub</h1>
+        <p class="text-gray-500 text-sm">Admin Panel</p>
+      </div>
+      <nav class="mt-6">
+        <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-primary hover:text-white">Dashboard</a>
+        <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-primary hover:text-white">Event Approvals</a>
+        <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-primary hover:text-white">User Management</a>
+        <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-primary hover:text-white">Reports</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-8">
+
+      <!-- Top Stats -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+          <p class="text-sm text-gray-500">Total Clubs</p>
+          <p class="text-2xl font-bold">12</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+          <p class="text-sm text-gray-500">Active Members</p>
+          <p class="text-2xl font-bold">350</p>
+        </div>
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+          <p class="text-sm text-gray-500">Pending Event Approvals</p>
+          <p class="text-2xl font-bold">8</p>
+        </div>
+      </div>
+
+      <!-- Approve Button -->
+      <div class="mb-8">
+        <button class="bg-primary text-white px-6 py-3 rounded-lg shadow hover:bg-blue-600">Approve Events</button>
+      </div>
+
+      <!-- Tables Section -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Pending Events -->
+        <div class="bg-white shadow rounded-lg p-6">
+          <h2 class="font-bold text-lg mb-4">Pending Events</h2>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-gray-600">
+                <th class="py-2">Event Title</th>
+                <th class="py-2">Club</th>
+                <th class="py-2">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="py-2">Event A</td>
+                <td>Club X</td>
+                <td>09/16/2023</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">Event B</td>
+                <td>Club Y</td>
+                <td>09/12/2023</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Recent Activities -->
+        <div class="bg-white shadow rounded-lg p-6">
+          <h2 class="font-bold text-lg mb-4">Recent Activities</h2>
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="text-gray-600">
+                <th class="py-2">Action</th>
+                <th class="py-2">By Whom</th>
+                <th class="py-2">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-t">
+                <td class="py-2">User added</td>
+                <td>Alice Smith</td>
+                <td>09/08/2023</td>
+              </tr>
+              <tr class="border-t">
+                <td class="py-2">Event approved</td>
+                <td>Alice Smith</td>
+                <td>09/08/2023</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>
