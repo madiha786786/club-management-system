@@ -15,7 +15,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 // Make sure you have this middleware file
 const { authenticateToken } = require("./middleware");
-const Event = require('../models/eventModel');
+const Event = require('./models/eventModel');
 
 const app = express();
 
