@@ -340,7 +340,7 @@ button:disabled {
     const sel = document.getElementById('clubSelect');
     const manual = document.getElementById('clubManualInput');
     try {
-      const res = await fetch('https://club-management-system.onrender.com/clubs');
+      const res = await fetch('https://club-management-system-d6on.onrender.com/clubs');
       const clubs = await res.json();
 
       if (!Array.isArray(clubs) || clubs.length === 0) {
@@ -561,7 +561,7 @@ button:disabled {
         submitBtn.disabled = true;
         submitBtn.textContent = 'Registering...';
 
-        fetch("https://club-management-system.onrender.com/register", {
+        fetch("https://club-management-system-d6on.onrender.com/register", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
