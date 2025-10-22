@@ -340,7 +340,7 @@ button:disabled {
     const sel = document.getElementById('clubSelect');
     const manual = document.getElementById('clubManualInput');
     try {
-      const res = await fetch('/clubs');
+      const res = await fetch('https://club-management-system.onrender.com/clubs');
       const clubs = await res.json();
 
       if (!Array.isArray(clubs) || clubs.length === 0) {

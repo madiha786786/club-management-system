@@ -1,5 +1,6 @@
 // api.js
-const API_BASE = "http://localhost:5000";
+// const API_BASE = "http://localhost:5000";
+const API_BASE ="https://club-management-system.onrender.com";
 
 function getToken() {
   return localStorage.getItem("token");

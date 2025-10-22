@@ -18,11 +18,12 @@ const { authenticateToken } = require("./middleware");
 const Event = require('./models/eventModel');
 
 const app = express();
+app.use(cors());
 
 // Configure 
 const JWT_SECRET = process.env.JWT_SECRET;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/kmit-club";
-app.use(cors());
+
 app.use(bodyParser.json());
 
 
