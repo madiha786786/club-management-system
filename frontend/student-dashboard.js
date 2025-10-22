@@ -1,4 +1,5 @@
 window.onload = async function() {
+   loadApprovedEvents();
   const role = localStorage.getItem('role');
   if (!getToken() || role !== "student"){
     alert("Please login as student first!");
@@ -10,8 +11,11 @@ window.onload = async function() {
     document.body.innerHTML = "Unauthorized or error";
     return;
   }
-  document.getElementById("studentName").innerText = res.name;
-  document.getElementById("userName").innerText = res.name + " (" + res.rollNumber + ")";
+  // document.getElementById("studentName").innerText = res.name;
+  // document.getElementById("userName").innerText = res.name + " (" + res.rollNumber + ")";
+  // This is the corrected code
+document.getElementById("studentName").innerText = res.username;
+document.getElementById("userName").innerText = res.username;
   document.getElementById("clubsCount").innerText = res.joinedClubs.length;
   document.getElementById("pendingCount").innerText = res.pendingRequests.length;
   // My Clubs
@@ -42,6 +46,7 @@ window.onload = async function() {
         </div>`;
       }).join("")
     : "<p class='text-gray-500'>No clubs available</p>";
+    loadApprovedEvents(); 
 };
 
 async function leaveClub(clubId) {
@@ -75,4 +80,36 @@ async function joinClub(clubId) {
     } else {
         alert('Error: ' + (res.error || 'Failed to send request'));
     }
+}
+
+// async function loadApprovedEvents() {
+//     const events = await apiRequest("/events/approved");
+//     const list = document.getElementById("eventsList");
+//     if (!events || events.length === 0) {
+//         list.innerHTML = "<p class='text-gray-500'>No upcoming events.</p>";
+//         return;
+//     }
+//     list.innerHTML = events.map(event => `
+//         <div class="border p-3 rounded-lg">
+//             <p><strong>${event.title}</strong> (Hosted by ${event.club.name})</p>
+//             <p class="text-sm">${new Date(event.date).toLocaleString()}</p>
+//         </div>
+//     `).join("");
+//     }
+async function loadApprovedEvents() {
+    const events = await apiRequest("/events/approved");
+    const list = document.getElementById("eventsList");
+
+    if (!events || events.length === 0) {
+        list.innerHTML = "<p class='text-gray-500'>No upcoming events.</p>";
+        return;
+    }
+
+    list.innerHTML = events.map(event => `
+        <div class="border p-3 rounded-lg">
+            <p><strong>${event.title}</strong></p>
+            <p class="text-sm">Hosted by ${event.club?.name || event.clubName || "Unknown Club"}</p>
+            <p class="text-sm">${new Date(event.date).toLocaleString()}</p>
+        </div>
+    `).join("");
 }

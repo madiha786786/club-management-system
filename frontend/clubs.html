@@ -263,110 +263,6 @@
             color: white;
             border-color: var(--kmit-secondary);
         }
-        
-        /* New styles for join button */
-        .join-btn {
-            background-color: var(--kmit-secondary);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-            margin-top: 10px;
-            width: 100%;
-        }
-        
-        .join-btn:hover {
-            background-color: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        .join-btn.joined {
-            background-color: #27ae60;
-        }
-        
-        .join-btn.joined:hover {
-            background-color: #219653;
-        }
-        
-        .join-btn.pending {
-            background-color: #f39c12;
-        }
-        
-        .join-btn.pending:hover {
-            background-color: #e67e22;
-        }
-        
-        .modal-join-btn {
-            background-color: var(--kmit-secondary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
-            margin-top: 15px;
-        }
-        
-        .modal-join-btn:hover {
-            background-color: #2980b9;
-        }
-        
-        .modal-join-btn.joined {
-            background-color: #27ae60;
-        }
-        
-        .modal-join-btn.joined:hover {
-            background-color: #219653;
-        }
-        
-        .modal-join-btn.pending {
-            background-color: #f39c12;
-        }
-        
-        .modal-join-btn.pending:hover {
-            background-color: #e67e22;
-        }
-        
-        .membership-status {
-            margin-top: 15px;
-            padding: 10px;
-            border-radius: 4px;
-            background-color: #f8f9fa;
-        }
-        
-        /* Login prompt modal */
-        .login-prompt {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1100;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .login-prompt-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-        }
-        
-        .login-prompt-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -384,10 +280,10 @@
              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index1.html">Home</a>
+                        <a class="nav-link" href="/index1.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="register.html">regsiter</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="login.html">Login</a>
@@ -401,13 +297,22 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                    
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- Hero Section -->
+    <!-- <section class="hero-section">
+        <div class="container">
+            <h1 class="display-4 fw-bold">KMIT Clubs</h1>
+            <p class="lead fs-3">Discover Your Passion, Explore Your Interests</p>
+            <p class="mb-4">Join one of our vibrant student clubs and be part of our thriving campus community</p>
+        </div>
+    </section> -->
 
     <!-- Clubs Section -->
     <section class="container mb-5">
@@ -438,176 +343,165 @@
         <div class="row g-4" id="clubsContainer">
             <!-- Kreeda -->
             <div class="col-md-4 col-lg-3" data-categories="sports">
-                <div class="card club-card">
-                    <img src="images/Kreeda.png" class="card-img-top club-image" alt="Kreeda Sports Club" onclick="openClubModal('kreeda')">
+                <div class="card club-card" onclick="openClubModal('kreeda')">
+                    <img src="/images/Kreeda.png" class="card-img-top club-image" alt="Kreeda Sports Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('kreeda')">Kreeda</h5>
-                        <p class="text-muted" onclick="openClubModal('kreeda')">Sports Club</p>
-                        <div onclick="openClubModal('kreeda')">
+                        <h5 class="card-title">Kreeda</h5>
+                        <p class="text-muted">Sports Club</p>
+                        <div>
                             <span class="club-tag">Sports</span>
                             <span class="club-tag">Fitness</span>
                         </div>
-                        <button class="join-btn" data-club="kreeda" onclick="handleJoinClick('kreeda', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Mudra -->
             <div class="col-md-4 col-lg-3" data-categories="cultural">
-                <div class="card club-card">
-                    <img src="images/Mudra.png" class="card-img-top club-image" alt="Mudra Dance Club" onclick="openClubModal('mudra')">
+                <div class="card club-card" onclick="openClubModal('mudra')">
+                    <img src="/images/Mudra.png" class="card-img-top club-image" alt="Mudra Dance Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('mudra')">Mudra</h5>
-                        <p class="text-muted" onclick="openClubModal('mudra')">Dance Club</p>
-                        <div onclick="openClubModal('mudra')">
+                        <h5 class="card-title">Mudra</h5>
+                        <p class="text-muted">Dance Club</p>
+                        <div>
                             <span class="club-tag">Cultural</span>
                             <span class="club-tag">Performance</span>
                         </div>
-                        <button class="join-btn" data-club="mudra" onclick="handleJoinClick('mudra', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Aalap -->
             <div class="col-md-4 col-lg-3" data-categories="cultural">
-                <div class="card club-card">
-                    <img src="images/Aalap.png" class="card-img-top club-image" alt="Aalap Music Club" onclick="openClubModal('aalap')">
+                <div class="card club-card" onclick="openClubModal('aalap')">
+                    <img src="/images/Aalap.png" class="card-img-top club-image" alt="Aalap Music Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('aalap')">Aalap</h5>
-                        <p class="text-muted" onclick="openClubModal('aalap')">Music Club</p>
-                        <div onclick="openClubModal('aalap')">
+                        <h5 class="card-title">Aalap</h5>
+                        <p class="text-muted">Music Club</p>
+                        <div>
                             <span class="club-tag">Cultural</span>
                             <span class="club-tag">Music</span>
                         </div>
-                        <button class="join-btn" data-club="aalap" onclick="handleJoinClick('aalap', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Aakarshan -->
             <div class="col-md-4 col-lg-3" data-categories="cultural">
-                <div class="card club-card">
-                    <img src="images/Aakarshan.png" class="card-img-top club-image" alt="Aakarshan Fashion Club" onclick="openClubModal('aakarshan')">
+                <div class="card club-card" onclick="openClubModal('aakarshan')">
+                    <img src="/images/akarshan.png" class="card-img-top club-image" alt="Aakarshan Fashion Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('aakarshan')">Aakarshan</h5>
-                        <p class="text-muted" onclick="openClubModal('aakarshan')">Fashion Club</p>
-                        <div onclick="openClubModal('aakarshan')">
+                        <h5 class="card-title">Aakarshan</h5>
+                        <p class="text-muted">Fashion Club</p>
+                        <div>
                             <span class="club-tag">Cultural</span>
                             <span class="club-tag">Fashion</span>
                         </div>
-                        <button class="join-btn" data-club="aakarshan" onclick="handleJoinClick('aakarshan', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Public Relations -->
             <div class="col-md-4 col-lg-3" data-categories="other">
-                <div class="card club-card">
-                    <img src="images/PR.png" class="card-img-top club-image" alt="Public Relations Club" onclick="openClubModal('public-relations')">
+                <div class="card club-card" onclick="openClubModal('public-relations')">
+                    <img src="/images/PR.png" class="card-img-top club-image" alt="Public Relations Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('public-relations')">Public Relations</h5>
-                        <p class="text-muted" onclick="openClubModal('public-relations')">PR Club</p>
-                        <div onclick="openClubModal('public-relations')">
+                        <h5 class="card-title">Public Relations</h5>
+                        <p class="text-muted">PR Club</p>
+                        <div>
                             <span class="club-tag">Communication</span>
                             <span class="club-tag">Networking</span>
                         </div>
-                        <button class="join-btn" data-club="public-relations" onclick="handleJoinClick('public-relations', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Recurse -->
             <div class="col-md-4 col-lg-3" data-categories="technical">
-                <div class="card club-card">
-                    <img src="images/Recurse.png" class="card-img-top club-image" alt="Recurse Tech Club" onclick="openClubModal('recurse')">
+                <div class="card club-card" onclick="openClubModal('recurse')">
+                    <img src="/images/Recurse.png" class="card-img-top club-image" alt="Recurse Tech Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('recurse')">Recurse</h5>
-                        <p class="text-muted" onclick="openClubModal('recurse')">Programming Club</p>
-                        <div onclick="openClubModal('recurse')">
+                        <h5 class="card-title">Recurse</h5>
+                        <p class="text-muted">Programming Club</p>
+                        <div>
                             <span class="club-tag">Technical</span>
                             <span class="club-tag">Coding</span>
                         </div>
-                        <button class="join-btn" data-club="recurse" onclick="handleJoinClick('recurse', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Traces of Lenses -->
             <div class="col-md-4 col-lg-3" data-categories="cultural">
-                <div class="card club-card">
-                    <img src="images/TOC.png" class="card-img-top club-image" alt="Traces of Lenses Club" onclick="openClubModal('traces-of-lenses')">
+                <div class="card club-card" onclick="openClubModal('traces-of-lenses')">
+                    <img src="/images/TOC.png" class="card-img-top club-image" alt="Traces of Lenses Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('traces-of-lenses')">Traces of Lenses</h5>
-                        <p class="text-muted" onclick="openClubModal('traces-of-lenses')">Photography Club</p>
-                        <div onclick="openClubModal('traces-of-lenses')">
+                        <h5 class="card-title">Traces of Lenses</h5>
+                        <p class="text-muted">Photography Club</p>
+                        <div>
                             <span class="club-tag">Cultural</span>
                             <span class="club-tag">Photography</span>
                         </div>
-                        <button class="join-btn" data-club="traces-of-lenses" onclick="handleJoinClick('traces-of-lenses', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Vachan -->
             <div class="col-md-4 col-lg-3" data-categories="literary">
-                <div class="card club-card">
-                    <img src="images/vachan.png" class="card-img-top club-image" alt="Vachan Literary Club" onclick="openClubModal('vachan')">
+                <div class="card club-card" onclick="openClubModal('vachan')">
+                    <img src="/images/vachan.png" class="card-img-top club-image" alt="Vachan Literary Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('vachan')">Vachan</h5>
-                        <p class="text-muted" onclick="openClubModal('vachan')">Literary Club</p>
-                        <div onclick="openClubModal('vachan')">
+                        <h5 class="card-title">Vachan</h5>
+                        <p class="text-muted">Literary Club</p>
+                        <div>
                             <span class="club-tag">Literary</span>
                             <span class="club-tag">Debate</span>
                         </div>
-                        <button class="join-btn" data-club="vachan" onclick="handleJoinClick('vachan', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Kmitra -->
             <div class="col-md-4 col-lg-3" data-categories="other">
-                <div class="card club-card">
-                    <img src="images/Kmitra.png" class="card-img-top club-image" alt="Kmitra Club" onclick="openClubModal('kmitra')">
+                <div class="card club-card" onclick="openClubModal('kmitra')">
+                    <img src="/images/Kmitra.png" class="card-img-top club-image" alt="Kmitra Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('kmitra')">Kmitra</h5>
-                        <p class="text-muted" onclick="openClubModal('kmitra')">Student Support Club</p>
-                        <div onclick="openClubModal('kmitra')">
+                        <h5 class="card-title">Kmitra</h5>
+                        <p class="text-muted">Student Support Club</p>
+                        <div>
                             <span class="club-tag">Community</span>
                             <span class="club-tag">Support</span>
                         </div>
-                        <button class="join-btn" data-club="kmitra" onclick="handleJoinClick('kmitra', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Organizing Committee -->
             <div class="col-md-4 col-lg-3" data-categories="other">
-                <div class="card club-card">
-                    <img src="images/OC.png" class="card-img-top club-image" alt="Organizing Committee" onclick="openClubModal('organizing-committee')">
+                <div class="card club-card" onclick="openClubModal('organizing-committee')">
+                    <img src="/images/OC.png" class="card-img-top club-image" alt="Organizing Committee">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('organizing-committee')">Organizing Committee</h5>
-                        <p class="text-muted" onclick="openClubModal('organizing-committee')">Event Management</p>
-                        <div onclick="openClubModal('organizing-committee')">
+                        <h5 class="card-title">Organizing Committee</h5>
+                        <p class="text-muted">Event Management</p>
+                        <div>
                             <span class="club-tag">Events</span>
                             <span class="club-tag">Management</span>
                         </div>
-                        <button class="join-btn" data-club="organizing-committee" onclick="handleJoinClick('organizing-committee', event)">Join Club</button>
                     </div>
                 </div>
             </div>
             
             <!-- Kavyalaya -->
             <div class="col-md-4 col-lg-3" data-categories="literary">
-                <div class="card club-card">
-                    <img src="images/Kaivalya.png" class="card-img-top club-image" alt="Kaivalya Poetry Club" onclick="openClubModal('Kaivalya')">
+                <div class="card club-card" onclick="openClubModal('Kaivalya')">
+                    <img src="/images/Kaivalya.png" class="card-img-top club-image" alt="Kaivalya Poetry Club">
                     <div class="card-body">
-                        <h5 class="card-title" onclick="openClubModal('Kaivalya')">Kavyalaya</h5>
-                        <p class="text-muted" onclick="openClubModal('Kaivalya')">Poetry Club</p>
-                        <div onclick="openClubModal('Kaivalya')">
+                        <h5 class="card-title">Kavyalaya</h5>
+                        <p class="text-muted">Poetry Club</p>
+                        <div>
                             <span class="club-tag">Literary</span>
                             <span class="club-tag">Poetry</span>
                         </div>
-                        <button class="join-btn" data-club="Kaivalya" onclick="handleJoinClick('Kaivalya', event)">Join Club</button>
                     </div>
                 </div>
             </div>
@@ -626,6 +520,8 @@
                     <p class="text-muted">Building champions on and off the field</p>
                 </div>
                 
+                <!-- <img src="images/Kreeda.png" alt="Kreeda Sports Club"> -->
+                
                 <div class="club-info">
                     <h4>About Kreeda</h4>
                     <p>Sports are an essential part of our life. It teaches
@@ -639,23 +535,22 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="kreeda" onclick="handleJoinClick('kreeda')">Join Club</button>
-                <div class="membership-status" id="kreeda-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
                     <div class="row">
                         <div class="col-md-3 gallery-item">
-                            <img src="images/kreeda1.jpg" alt="Sports Activity">
+                            <img src="/images/kreeda1.jpg" alt="Sports Activity">
                         </div>
                         <div class="col-md-3 gallery-item">
-                            <img src="images/kreeda2.jpg" alt="Sports Activity">
+                            <img src="/images/kreeda2.jpg" alt="Sports Activity">
                         </div>
                         <div class="col-md-3 gallery-item">
-                            <img src="images/kreeda3.jpg" alt="Sports Activity">
+                            <img src="/images/kreeda3.jpg" alt="Sports Activity">
                         </div>
                         <div class="col-md-3 gallery-item">
-                            <img src="images/kreeda4.jpg" alt="Sports Activity">
+                            <img src="/images/kreeda4.jpg" alt="Sports Activity">
                         </div>
                     </div>
                 </div>
@@ -675,29 +570,28 @@
                         more than just a form of art or learning a series of steps to music. It is a way of moving that uses
                          the body as an instrument of expression and communication. Through dance, one is educated about teamwork, focus and improvisation.
                           Hence, the initiative of creating the KMIT dance club was taken. We believe in bringing talented students across all years under one roof, on one platform. 
-                          The name we chose, Mudra, is a prominent part of a dancer's vocabulary and is one of the most significant features of Indian classical dance.
+                          The name we chose, Mudra, is a prominent part of a dancer’s vocabulary and is one of the most significant features of Indian classical dance.
                         </p>
                     
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="mudra" onclick="handleJoinClick('mudra')">Join Club</button>
-                <div class="membership-status" id="mudra-status"></div>
                 
+               
                 <div class="club-gallery">
                     <h4>Gallery</h4>
                     <div class="row">
                         <div class="col-md-3 gallery-item">
-                            <img src="images/Mudra1.jpg" alt="Sports Activity">
+                            <img src="/images/Mudra1.jpg" alt="Sports Activity">
                         </div>
                         <div class="col-md-3 gallery-item">
-                            <img src="images/Mudra2.jpg" alt="Sports Activity">
+                            <img src="/images/Mudra2.jpg" alt="Sports Activity">
                         </div>
                         <div class="col-md-3 gallery-item">
-                            <img src="images/Mudra3.jpg" alt="Sports Activity">
+                            <img src="/images/Mudra3.jpg" alt="Sports Activity">
                         </div>
                         <div class="col-md-3 gallery-item">
-                            <img src="images/Mudra4.jpg" alt="Sports Activity">
+                            <img src="/images/Mudra4.jpg" alt="Sports Activity">
                         </div>
                     </div>
                 </div>
@@ -712,6 +606,8 @@
                     <p class="text-muted">Creating melodies that touch hearts and inspire souls.</p>
                 </div>
                 
+                
+                
                 <div class="club-info">
                     <h4>About Aalap</h4>
                     <p>The first club formed in KMIT, AALAP – The Music Club of KMIT visions in exploring the 
@@ -724,8 +620,7 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="aalap" onclick="handleJoinClick('aalap')">Join Club</button>
-                <div class="membership-status" id="aalap-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -755,9 +650,10 @@
                     <p class="text-muted">Where creativity meets style and confidence shines</p>
                 </div>
                 
+                
                 <div class="club-info">
                     <h4>About Aakarshan</h4>
-                    <p>The purpose of AAKARSHAN – KMIT's very own ART CLUB is to encourage
+                    <p>The purpose of AAKARSHAN – KMIT’s very own ART CLUB is to encourage
                          fine art awareness. Art club is a welcoming place for the students who have a 
                          deep passion for the visual Arts. The aim of this Art club is to represent not the outward 
                          appearance of things, but their inner significance. Art club facilitates its members to take up 
@@ -767,8 +663,7 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="aakarshan" onclick="handleJoinClick('aakarshan')">Join Club</button>
-                <div class="membership-status" id="aakarshan-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -798,6 +693,8 @@
                     <p class="text-muted">Building strong connections and shaping communication.</p>
                 </div>
                 
+              
+                
                 <div class="club-info">
                     <h4>About Public relations</h4>
                     <p>The Public Relations Team leads the overall brand, 
@@ -807,15 +704,14 @@
                           and external communications to ensure that information and messages 
                           are consistently and accurately communicated across the KMIT community
                            including students, faculty, staff and alumni. The department also 
-                           spearheads the College's online presence, social media outreach, marketing
+                           spearheads the College’s online presence, social media outreach, marketing
                             campaigns, press releases and editorials.
                         </p>
                     
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="public-relations" onclick="handleJoinClick('public-relations')">Join Club</button>
-                <div class="membership-status" id="public-relations-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -845,6 +741,8 @@
                     <p class="text-muted">Unlocking logic and innovation through the power of code.</p>
                 </div>
                 
+                
+                
                 <div class="club-info">
                     <h4>About Recurse</h4>
                     <p>The purpose of this club is to provide students with the opportunity, 
@@ -859,8 +757,7 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="recurse" onclick="handleJoinClick('recurse')">Join Club</button>
-                <div class="membership-status" id="recurse-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -889,6 +786,7 @@
                     <p class="text-muted">Capturing moments that speak louder than words.</p>
                 </div>
                 
+                
                 <div class="club-info">
                     <h4>About TOC</h4>
                     <p>Traces of Lenses, the photography club of KMIT aims to bring all the aspiring photographers under
@@ -901,8 +799,7 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="traces-of-lenses" onclick="handleJoinClick('traces-of-lenses')">Join Club</button>
-                <div class="membership-status" id="traces-of-lenses-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -931,18 +828,18 @@
                     <p class="text-muted">Exploring ideas through words, thoughts, and expression.</p>
                 </div>
                 
+                
                 <div class="club-info">
                     <h4>About Vachan</h4>
                     <p>Vachan aims to enhance and exhibit various forms of expression
-                         through speech from an individual's perspective. The club encourages 
+                         through speech from an individual’s perspective. The club encourages 
                          budding voices and provides a platform for numerous speakers and their words.
                     </p>
                     
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="vachan" onclick="handleJoinClick('vachan')">Join Club</button>
-                <div class="membership-status" id="vachan-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -971,19 +868,20 @@
                     <p class="text-muted">Spreading kindness and making a difference together.</p>
                 </div>
                 
+                <!-- <img src="" alt="Kreeda Sports Club">
+                 -->
                 <div class="club-info">
                     <h4>About Kmitra</h4>
                     <p>Emerging out from the tech magazine Vipassana, evolving into a monthly 
-                        magazine covering various topics to help us 'Think, Integrate and Evolve,'
-                         rose kMitra – 'A friend to grow up with.' kMitra has been making progress edition
+                        magazine covering various topics to help us ‘Think, Integrate and Evolve,’
+                         rose kMitra – ‘A friend to grow up with.’ kMitra has been making progress edition
                           by edition, revamping to give a new updated look, 
                         with a team larger than ever, with content getting better in quality and with an expanded readership.</p>
                     
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="kmitra" onclick="handleJoinClick('kmitra')">Join Club</button>
-                <div class="membership-status" id="kmitra-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -1013,6 +911,8 @@
                     <p class="text-muted">Bringing events to life with planning and precision.</p>
                 </div>
                 
+               
+                
                 <div class="club-info">
                     <h4>About OC</h4>
                     <p>The Organising Committee is responsible for the entire logistics
@@ -1025,8 +925,7 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="organizing-committee" onclick="handleJoinClick('organizing-committee')">Join Club</button>
-                <div class="membership-status" id="organizing-committee-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -1053,6 +952,8 @@
                     <p class="text-muted">Where emotions flow seamlessly into words and verses.</p>
                 </div>
                 
+              
+                
                 <div class="club-info">
                     <h4>About Kaivalya</h4>
                     <p>Kaivalya aims to separate stress and distractions from our fellow students by 
@@ -1062,8 +963,7 @@
                   
                 </div>
                 
-                <button class="modal-join-btn" data-club="Kaivalya" onclick="handleJoinClick('Kaivalya')">Join Club</button>
-                <div class="membership-status" id="Kaivalya-status"></div>
+                
                 
                 <div class="club-gallery">
                     <h4>Gallery</h4>
@@ -1088,17 +988,6 @@
         </div>
     </div>
 
-    <!-- Login Prompt Modal -->
-    <div id="loginPrompt" class="login-prompt">
-        <div class="login-prompt-content">
-            <h3>Login Required</h3>
-            <p>You need to be logged in to join a club. Please login or register to continue.</p>
-            <div class="login-prompt-buttons">
-                <button class="btn btn-primary" onclick="redirectToLogin()">Login</button>
-                <button class="btn btn-outline-secondary" onclick="closeLoginPrompt()">Cancel</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1119,11 +1008,12 @@
                 <div class="col-md-2 mb-4">
                     <h5>Quick Links</h5>
                     <ul class="list-unstyled">
-                        <li><a href="index1.html">Home</a></li>
-                        <li><a href="clubs.html">Clubs</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Clubs</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="event.html">Events</a></li>
+                        <li><a href="#">Events</a></li>
                         <li><a href="#">Gallery</a></li>
+                        <li><a href="#">About</a></li>
                     </ul>
                 </div>
                 
@@ -1139,7 +1029,7 @@
                 <div class="col-md-3 mb-4">
                     <h5>Login Portals</h5>
                     <ul class="list-unstyled">
-                        <li><a href="login.html">Student Login</a></li>
+                        <li><a href="#">Student Login</a></li>
                         <li><a href="#">Club Head Login</a></li>
                         <li><a href="#">Faculty Login</a></li>
                         <li><a href="#">Admin Login</a></li>
@@ -1154,166 +1044,89 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    const API_URL = "http://localhost:5000"; // Backend URL
-
-    // Page load hote hi student ka status fetch karo
-    document.addEventListener('DOMContentLoaded', function() {
-        fetchStudentClubStatus();
-    });
-
-    // Student ke joined aur pending clubs ki info laao
-    async function fetchStudentClubStatus() {
-        const token = localStorage.getItem('token');
-        if (!token) {
-            // Agar logged in nahi hai, to kuch mat karo. Buttons default rahenge.
-            console.log("User not logged in.");
-            return;
-        }
-
-        try {
-            const response = await fetch(`${API_URL}/student/dashboard`, {
-                headers: { 'Authorization': `Bearer ${token}` }
-            });
-
-            if (!response.ok) {
-                // Agar token invalid hai to bhi aage badho, user ko guest maano
-                console.error("Failed to fetch student status, maybe token expired.");
-                return;
-            }
-
-            const data = await response.json();
-            updateAllJoinButtons(data.student);
-        } catch (error) {
-            console.error('Error fetching student status:', error);
-        }
-    }
-
-    // Saare join buttons ko student ke data ke hisaab se update karo
-    function updateAllJoinButtons(student) {
-        if (!student) return;
-
-        const joinedClubIds = student.joinedClubs.map(club => club._id);
-        const pendingClubIds = student.pendingRequests.map(club => club._id);
-
-        // Naye logic se clubs ki list laani padegi. Abhi ke liye hum name se match kar rahe hain.
-        // NOTE: Best practice yeh hai ki /clubs route se data laake match karein.
-        // But for quick fix, we assume club name and slug are similar.
-        
-        const allButtons = document.querySelectorAll('.join-btn, .modal-join-btn');
-        allButtons.forEach(button => {
-            const clubSlug = button.getAttribute('data-club').toLowerCase();
-            const clubCard = document.querySelector(`.card .card-title, h5`).filter(h5 => h5.textContent.toLowerCase() === clubSlug)[0]; // Ye logic thoda weak hai
-
-            // Yahan par hum student data se check karenge. Iske liye `slug` zaroori hai.
-            // Hum backend se club list laake check karenge for robustness.
-            // ABHI KE LIYE, aage badhte hain. Join request ka logic main hai.
-        });
-    }
-
-    // Join button click handle karne wala main function
-    async function handleJoinClick(clubSlug, event) {
-        if (event) {
-            event.stopPropagation(); // Modal ko open hone se roko
-        }
-
-        const token = localStorage.getItem('token');
-        if (!token) {
-            document.getElementById('loginPrompt').style.display = 'flex';
-            return;
-        }
-
-        const button = document.querySelector(`.join-btn[data-club="${clubSlug}"]`);
-        const modalButton = document.querySelector(`.modal-join-btn[data-club="${clubSlug}"]`);
-        
-        // NOTE: Yahan 'Leave Club' ya 'Cancel Request' ka logic bhi add kar sakte hain,
-        // abhi ke liye sirf 'Join' par focus karte hain.
-
-        try {
-            const response = await fetch(`${API_URL}/student/join-club`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({ clubSlug: clubSlug }) // Backend ko slug bhej rahe hain
-            });
-
-            const result = await response.json();
-
-            if (!response.ok) {
-                throw new Error(result.error || 'Request failed.');
-            }
+    <script>
+        // Function to open club modal
+        function openClubModal(clubId) {
+            document.getElementById('clubModal').style.display = 'block';
             
-            alert('Request sent successfully!');
-
-            // Update button UI
-            button.textContent = 'Pending Approval';
-            button.classList.add('pending');
-            modalButton.textContent = 'Pending Approval';
-            modalButton.classList.add('pending');
-
-        } catch (error) {
-            alert("Error: " + error.message);
+            // Hide all club details
+            const clubDetails = document.querySelectorAll('.club-details');
+            clubDetails.forEach(detail => {
+                detail.style.display = 'none';
+            });
+            
+            // Show the selected club details
+            document.getElementById(clubId).style.display = 'block';
+            
+            // Prevent body scrolling when modal is open
+            document.body.style.overflow = 'hidden';
         }
-    }
-
-    // Login prompt functions (yeh aage-peeche theek hain)
-    function showLoginPrompt() {
-        document.getElementById('loginPrompt').style.display = 'flex';
-    }
-
-    function closeLoginPrompt() {
-        document.getElementById('loginPrompt').style.display = 'none';
-    }
-
-    function redirectToLogin() {
-        window.location.href = 'login.html';
-    }
-    
-    // Baaki modal, search aur filter ka code (isko change mat karo)
-    function openClubModal(clubId) {
-        document.getElementById('clubModal').style.display = 'block';
-        const clubDetails = document.querySelectorAll('.club-details');
-        clubDetails.forEach(detail => detail.style.display = 'none');
-        document.getElementById(clubId).style.display = 'block';
-        document.body.style.overflow = 'hidden';
-    }
-    function closeClubModal() {
-        document.getElementById('clubModal').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-    window.onclick = function(event) {
-        if (event.target === document.getElementById('clubModal')) closeClubModal();
-        if (event.target === document.getElementById('loginPrompt')) closeLoginPrompt();
-    }
-    document.getElementById('clubSearch').addEventListener('keyup', function() {
-        const searchText = this.value.toLowerCase();
-        const clubCards = document.querySelectorAll('#clubsContainer > div');
-        clubCards.forEach(cardContainer => {
-            const card = cardContainer.querySelector('.club-card');
-            const title = card.querySelector('.card-title').textContent.toLowerCase();
-            if (title.includes(searchText)) cardContainer.style.display = 'block';
-            else cardContainer.style.display = 'none';
-        });
-    });
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    categoryButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            categoryButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            const category = this.getAttribute('data-category');
-            const clubCards = document.querySelectorAll('#clubsContainer > div');
+        
+        // Function to close club modal
+        function closeClubModal() {
+            document.getElementById('clubModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('clubModal');
+            if (event.target === modal) {
+                closeClubModal();
+            }
+        }
+        
+        // Search functionality
+        document.getElementById('clubSearch').addEventListener('keyup', function() {
+            const searchText = this.value.toLowerCase();
+            const clubCards = document.querySelectorAll('.club-card');
+            
             clubCards.forEach(card => {
-                if (category === 'all' || card.getAttribute('data-categories').includes(category)) {
-                    card.style.display = 'block';
+                const title = card.querySelector('.card-title').textContent.toLowerCase();
+                const tags = card.querySelectorAll('.club-tag');
+                let tagText = '';
+                
+                tags.forEach(tag => {
+                    tagText += tag.textContent.toLowerCase() + ' ';
+                });
+                
+                if (title.includes(searchText) || tagText.includes(searchText)) {
+                    card.parentElement.style.display = 'block';
                 } else {
-                    card.style.display = 'none';
+                    card.parentElement.style.display = 'none';
                 }
             });
         });
-    });
-</script>
-   
+        
+        // Category filter functionality
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const clubCards = document.querySelectorAll('.club-card');
+                
+                if (category === 'all') {
+                    clubCards.forEach(card => {
+                        card.parentElement.style.display = 'block';
+                    });
+                } else {
+                    clubCards.forEach(card => {
+                        const categories = card.parentElement.getAttribute('data-categories');
+                        if (categories.includes(category)) {
+                            card.parentElement.style.display = 'block';
+                        } else {
+                            card.parentElement.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -49,72 +49,67 @@
       margin: 0;
       font-family: Arial, sans-serif;
     }
-
-   
-     .navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  padding: 12px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: whitesmoke;
-  z-index: 1000;
-}
-
-    .navbar .logo {
-      color: navy;
-      font-size: 22px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    .navbar .nav-wrapper {
-  flex: 1; /* fill remaining space */
-  display: flex;
-  justify-content: center; /* center links */
-}
-
+     :root {
+    --kmit-primary: #2c3e50;
+    --kmit-secondary: #3498db;
+    --kmit-accent: #e74c3c;
+    --kmit-light: #ecf0f1;
+    --kmit-dark: #2c3e50;
+  }
   
-.navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 30px; /* space between links */
-  margin: 0;
-  padding: 0;
-}
-    .navbar ul li {
-      margin: 0 15px;
-    }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+  }
 
-    .navbar ul li a {
-      color: black;
-      text-decoration: none;
-      font-size: 16px;
-      transition: 0.3s;
-    }
+  /* Navbar Styling - Matching your other files */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: var(--kmit-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+  }
 
-    .navbar ul li a:hover {
-      color: #ff9800;
-    }
+  .navbar .logo {
+    color: white;
+    font-size: 22px;
+      padding-left:230px;
+    font-weight: 700;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 
-    /* Registration Button */
-    .navbar .btn {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+     padding-right:238px;
+  }
 
-    .navbar .btn:hover {
-      background-color: #e68900;
-    }
+  .navbar ul li a {
+   color: gainsboro;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+  }
 
+  .navbar ul li a:hover {
+    color: var(--kmit-accent);
+  }
     /* Dummy content for testing */
     .content {
       margin-top: 80px;
@@ -123,7 +118,7 @@
   </style>
 
  
-<nav class="navbar">
+<!-- <nav class="navbar">
   <a href="#" class="logo">KMIT Club</a>
   <div class="nav-wrapper">
     <ul>
@@ -133,7 +128,18 @@
       <li><a href="#">Contact</a></li>
     </ul>
   </div>
-</nav>
+</nav> -->
+  <nav class="navbar">
+    <a href="#" class="logo">KMIT Clubs Hub</a>
+    <ul>
+      <li><a href="/index1.html">Home</a></li>
+      <li><a href="register.html">Register</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="clubs.html">Clubs</a></li>
+      <li><a href="event.html">Events</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
 
 
   </style>
