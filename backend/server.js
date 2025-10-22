@@ -23,8 +23,12 @@ const app = express();
 const JWT_SECRET = process.env.JWT_SECRET;
 const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/kmit-club";
 app.use(bodyParser.json());
+
+// app.use(cors({
+//   origin: "https://club-management-system-1-bjgg.onrender.com"
+// }));
 app.use(cors({
-  origin: "https://club-management-system-1-bjgg.onrender.com"
+  origin: "https://club-management-system-1-bgjg.onrender.com"
 }));
 
 // Serve the frontend files from the frontend/ folder so you can open pages at
