@@ -18,7 +18,11 @@ const { authenticateToken } = require("./middleware");
 const Event = require('./models/eventModel');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ["https://club-management-system-1-bgjg.onrender.com", "http://localhost:3000"],
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+}));
 
 // Configure 
 const JWT_SECRET = process.env.JWT_SECRET;
