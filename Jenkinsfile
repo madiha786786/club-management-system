@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/madiha786786/club-management-system.git'
+                git branch: 'main', url: 'https://github.com/madiha786786/club-management-system.git'
             }
         }
 
